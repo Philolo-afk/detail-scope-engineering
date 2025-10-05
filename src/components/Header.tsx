@@ -61,12 +61,12 @@ const Header = () => {
 
               {isProductsOpen && (
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-xl rounded-lg overflow-hidden">
-                  <div className="grid grid-cols-4 gap-6 p-8 min-w-[800px]">
+                  <div className="grid grid-cols-4 gap-4 p-6 min-w-[800px]">
                     {productCategories.map((category, index) => (
                       <a
                         key={index}
                         href={`#${category.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="px-4 py-3 text-gray-700 hover:text-red-600 transition-colors font-medium"
+                        className="px-4 py-4 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-all font-medium rounded-lg border border-gray-200 hover:border-red-600 hover:shadow-md"
                       >
                         {category}
                       </a>
