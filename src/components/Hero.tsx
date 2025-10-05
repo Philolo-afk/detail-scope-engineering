@@ -13,11 +13,14 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
         <div className="max-w-5xl">
           <h1 className="text-7xl md:text-8xl font-bold text-white leading-tight">
-            Engineering Reliability in
+            Engineering 
           </h1>
           <h2 className="text-6xl md:text-7xl font-bold text-white leading-tight mt-2">
-            Every Revolution
+            Reliability in
           </h2>
+           <h3 className="text-6xl md:text-7xl font-bold text-white leading-tight mt-2">
+            Every Revolution
+          </h3>
 
           <div className="mt-16 flex flex-wrap gap-4">
             <a
