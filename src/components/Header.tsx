@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,17 +31,17 @@ const Header = () => {
         isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <img
               src="/DUALSCOPE-LOGO-REVISED.png"
               alt="Dual Scope Engineering"
-              className="h-10 sm:h-14 w-auto"
+              className="h-14 w-auto"
             />
           </div>
 
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             <a
               href="#about"
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
@@ -98,78 +97,7 @@ const Header = () => {
               Talk to Our Team
             </a>
           </nav>
-
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-gray-700 hover:text-gray-900 p-2"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
-
-        {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 bg-white">
-            <nav className="py-4 space-y-2">
-              <a
-                href="#about"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-gray-900 font-medium transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </a>
-
-              <div>
-                <button
-                  onClick={() => setIsProductsOpen(!isProductsOpen)}
-                  className="w-full flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-gray-900 font-medium transition-colors"
-                >
-                  <span>Products</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {isProductsOpen && (
-                  <div className="bg-gray-50 py-2">
-                    {productCategories.map((category, index) => (
-                      <a
-                        key={index}
-                        href={`#${category.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block px-8 py-2 text-sm text-gray-600 hover:text-red-600 transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {category}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <a
-                href="#team"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-gray-900 font-medium transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </a>
-
-              <a
-                href="#careers"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-gray-900 font-medium transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Careers
-              </a>
-
-              <a
-                href="#contact"
-                className="block mx-4 mt-4 text-center bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded font-medium transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Talk to Our Team
-              </a>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   );
