@@ -22,7 +22,7 @@ const Header = () => {
     'Pulleys',
     'Seals',
     'Steam Systems',
-    'Water'
+    'Water Treatment'
   ];
 
   return (
