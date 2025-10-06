@@ -48,32 +48,32 @@ const ScrollBearing = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 pointer-events-none hidden md:block">
+    <div className="fixed bottom-6 left-6 z-10 pointer-events-none hidden md:block">
       <div
         ref={bearingRef}
-        className="relative w-16 h-16 transition-transform will-change-transform"
+        className="relative w-8 h-8 transition-transform will-change-transform opacity-70"
         style={{ transformOrigin: 'center' }}
       >
         <svg
           viewBox="0 0 100 100"
-          className="w-full h-full drop-shadow-lg"
-          style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3))' }}
+          className="w-full h-full"
+          style={{ filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))' }}
         >
           <defs>
             <radialGradient id="outerRing" cx="50%" cy="50%">
-              <stop offset="0%" stopColor="#8B9DC3" />
-              <stop offset="50%" stopColor="#5A6A8A" />
-              <stop offset="100%" stopColor="#3E4A5F" />
+              <stop offset="0%" stopColor="#DC2626" />
+              <stop offset="50%" stopColor="#B91C1C" />
+              <stop offset="100%" stopColor="#991B1B" />
             </radialGradient>
             <radialGradient id="innerRing" cx="50%" cy="50%">
-              <stop offset="0%" stopColor="#B8C5D9" />
-              <stop offset="50%" stopColor="#7A8CA8" />
-              <stop offset="100%" stopColor="#556477" />
+              <stop offset="0%" stopColor="#EF4444" />
+              <stop offset="50%" stopColor="#DC2626" />
+              <stop offset="100%" stopColor="#B91C1C" />
             </radialGradient>
             <radialGradient id="center" cx="50%" cy="50%">
-              <stop offset="0%" stopColor="#E8EDF2" />
-              <stop offset="50%" stopColor="#A8B5C7" />
-              <stop offset="100%" stopColor="#6B7A8F" />
+              <stop offset="0%" stopColor="#FCA5A5" />
+              <stop offset="50%" stopColor="#F87171" />
+              <stop offset="100%" stopColor="#EF4444" />
             </radialGradient>
           </defs>
 
@@ -82,7 +82,7 @@ const ScrollBearing = () => {
             cy="50"
             r="48"
             fill="url(#outerRing)"
-            stroke="#2A3544"
+            stroke="#7F1D1D"
             strokeWidth="1"
           />
 
@@ -91,7 +91,7 @@ const ScrollBearing = () => {
             cy="50"
             r="38"
             fill="none"
-            stroke="#3E4A5F"
+            stroke="#991B1B"
             strokeWidth="1.5"
           />
 
@@ -106,7 +106,7 @@ const ScrollBearing = () => {
                 cy={y}
                 r="4"
                 fill="url(#innerRing)"
-                stroke="#2A3544"
+                stroke="#7F1D1D"
                 strokeWidth="0.5"
               />
             );
@@ -117,7 +117,7 @@ const ScrollBearing = () => {
             cy="50"
             r="28"
             fill="none"
-            stroke="#4A5A70"
+            stroke="#B91C1C"
             strokeWidth="1"
           />
 
@@ -126,7 +126,7 @@ const ScrollBearing = () => {
             cy="50"
             r="18"
             fill="url(#center)"
-            stroke="#2A3544"
+            stroke="#7F1D1D"
             strokeWidth="1"
           />
 
@@ -134,7 +134,7 @@ const ScrollBearing = () => {
             cx="50"
             cy="50"
             r="6"
-            fill="#556477"
+            fill="#B91C1C"
           />
 
           {[0, 60, 120, 180, 240, 300].map((angle) => (
@@ -144,7 +144,7 @@ const ScrollBearing = () => {
               y1="50"
               x2={50 + 15 * Math.cos((angle * Math.PI) / 180)}
               y2={50 + 15 * Math.sin((angle * Math.PI) / 180)}
-              stroke="#3E4A5F"
+              stroke="#991B1B"
               strokeWidth="1.5"
               strokeLinecap="round"
             />
